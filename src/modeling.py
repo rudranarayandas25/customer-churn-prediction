@@ -102,7 +102,7 @@ def compare_models(results_list):
     return df
 
 
-def save_model(model, scaler, model_name: str, base_dir: str = "/workspace/models"):
+def save_model(model, scaler, model_name: str, base_dir: str = "models"):
     os.makedirs(base_dir, exist_ok=True)
     joblib.dump(model, os.path.join(base_dir, f"{model_name}.joblib"))
     joblib.dump(scaler, os.path.join(base_dir, "scaler.joblib"))
@@ -113,7 +113,7 @@ if __name__ == "__main__":
     from preprocessing import prepare_data
 
     X_train, X_test, y_train, y_test, scaler, _ = prepare_data(
-        "/workspace/data/telco_churn.csv"
+        "data/telco_churn.csv"
     )
 
     X_train_res, y_train_res = apply_smote(X_train, y_train)

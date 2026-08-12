@@ -131,7 +131,8 @@ df = pd.DataFrame(
     }
 )
 
-df.to_csv("/workspace/data/telco_churn.csv", index=False)
+df.to_csv("data/telco_churn.csv", index=False)
+
 print(f"Dataset created: {df.shape[0]} rows, {df.shape[1]} columns")
 print(f"Churn rate: {df['Churn'].mean():.2%}")
 print(df.head())
